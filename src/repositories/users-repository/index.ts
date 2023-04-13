@@ -15,9 +15,29 @@ async function findUser(email: string) {
     })
 }
 
+async function findUserById(userId: number) {
+    return prisma.users.findUnique({
+        where: {id: userId}
+    })
+}
+
+async function phasePass(userId: number, phase: number){
+    const newPhase = prisma.users.update({
+        where: {
+            id: userId
+        },
+        data: {
+            phase: phase+1
+        }
+    })
+    return newPhase
+}
+
 const userRepository = {
     findUser,
-    create
+    create,
+    phasePass,
+    findUserById
 }
 
 export default userRepository;

@@ -19,6 +19,19 @@ model users {
   id        Int      @id @default(autoincrement())
   email     String
   password  String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+  updatedAt DateTime @updatedAt @db.Timestamp(6)
+  phase     Int      @default(0)
+}
+
+model answers {
+  id     Int    @id @default(autoincrement())
+  answer String
+}
+
+model hall_of_fame {
+  id        Int       @id @default(autoincrement())
+  name      String
+  createdat DateTime? @default(now()) @db.Timestamp(6)
+  updatedat DateTime? @default(now()) @db.Timestamp(6)
 }

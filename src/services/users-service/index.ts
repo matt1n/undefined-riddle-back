@@ -1,9 +1,13 @@
 import userRepository from "@/repositories/users-repository";
 import bcrypt from "bcrypt"
 import { users } from "@prisma/client";
+import jwt from "jsonwebtoken"
+import sessionRepository from "@/repositories/sessions-repository";
 
 export async function createUser({email, password}: usersParams): Promise<users> {
     const unvalidEmail = await userRepository.findUser(email)
+
+    console.log(unvalidEmail)
 
     if(unvalidEmail) {
         throw 500
@@ -34,13 +38,14 @@ export async function signIn(body: {email: string, password: string}){
   //session
   delete user.password
 
-//   const token = jwt.sign({ user.id }, process.env.JWT_SECRET);
-//   await sessionRepository.create({
-//     token,
-//     userId,
-//   });
+  const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET);
 
-  return user //{user, token}
+  await sessionRepository.create({
+    token,
+    userId: user.id,
+  });
+
+  return {user, token}
 }
 
 export type usersParams = Pick<users, "email" | "password">;
