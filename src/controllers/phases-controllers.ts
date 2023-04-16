@@ -12,3 +12,14 @@ export async function phaseAuthorization(req: AuthenticatedRequest,res: Response
     res.sendStatus(error)
   }
 }
+
+export async function endPhaseAuthorization(req: AuthenticatedRequest,res: Response){
+  const {userId} = req
+  const {phaseId} = req.params
+  try {
+    const authorized = await phasesService.endPhaseAuthorization(userId, Number(phaseId))
+    res.send(authorized)
+  } catch (error) {
+    res.sendStatus(error)
+  }
+}

@@ -16,12 +16,13 @@ model sessions {
 }
 
 model users {
-  id        Int      @id @default(autoincrement())
-  email     String
-  password  String
-  createdAt DateTime @default(now()) @db.Timestamp(6)
-  updatedAt DateTime @updatedAt @db.Timestamp(6)
-  phase     Int      @default(0)
+  id           Int           @id @default(autoincrement())
+  email        String
+  password     String
+  createdAt    DateTime      @default(now()) @db.Timestamp(6)
+  updatedAt    DateTime      @updatedAt @db.Timestamp(6)
+  phase        Int           @default(0)
+  hall_of_fame hall_of_fame?
 }
 
 model answers {
@@ -32,6 +33,8 @@ model answers {
 model hall_of_fame {
   id        Int       @id @default(autoincrement())
   name      String
-  createdat DateTime? @default(now()) @db.Timestamp(6)
-  updatedat DateTime? @default(now()) @db.Timestamp(6)
+  createdAt DateTime? @default(now()) @db.Timestamp(6)
+  updatedAt DateTime? @default(now()) @db.Timestamp(6)
+  userId    Int       @unique(map: "INDEX_689J")
+  users     users     @relation(fields: [userId], references: [id], onDelete: Cascade, map: "FK_KZVT")
 }

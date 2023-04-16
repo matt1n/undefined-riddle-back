@@ -3,6 +3,7 @@ import cors from "cors";
 
 import { loadEnv, connectDb, disconnectDB } from "@/config";
 import { answersRouter, phaseRouter, usersRouter } from "./routers";
+import { hallRouter } from "./routers/hall-of-fame-router";
 
 loadEnv();
 
@@ -17,7 +18,8 @@ app
   .get("/health", (_req, res) => res.send("OK!"))
   .use("/users", usersRouter)
   .use("/answers", answersRouter)
-  .use("/phases", phaseRouter);
+  .use("/phases", phaseRouter)
+  .use("/hall", hallRouter);
 
 export function init(): Promise<Express> {
 connectDb();
