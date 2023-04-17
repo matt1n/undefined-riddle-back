@@ -7,8 +7,6 @@ import sessionRepository from "@/repositories/sessions-repository";
 export async function signUp({email, password}: usersParams): Promise<users> {
     const unvalidEmail = await userRepository.findUser(email)
 
-    console.log(unvalidEmail)
-
     if(unvalidEmail) {
         throw 500
     };

@@ -5,7 +5,6 @@ import { Response } from "express";
 export async function postName(req: AuthenticatedRequest, res: Response) {
   const { name } = req.body
   const { userId } = req
-  console.log(name, userId)
   try {
     const response = await hallService.nameCreate(name, Number(userId))
     res.status(200).send(response)

@@ -6,11 +6,8 @@ export async function phaseAuthorization(userId: number, phaseId: number){
     return false
   }
 
-  console.log(userId)
-
   const user = await userRepository.findUserById(userId)
 
-  console.log(userId, phaseId)
   
   if (user.phase < phaseId) {
     return false
@@ -30,11 +27,8 @@ export async function endPhaseAuthorization(userId: number, phaseId: number){
     return false
   }
 
-  console.log(userId)
 
   const user = await userRepository.findUserById(userId)
-
-  console.log(userId, phaseId)
   
   if (user.phase < phaseId) {
     return false

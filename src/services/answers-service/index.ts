@@ -11,7 +11,6 @@ export async function answerCheck(phaseNumber: number, answer: string, userId: n
   }
   
   const correct = await answerRepository.answerCheck(answer, phaseNumber+1)
-  console.log(correct)
 
   if (!correct) {
     return false
