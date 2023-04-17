@@ -7,10 +7,6 @@ import { hallRouter } from "./routers/hall-of-fame-router";
 
 loadEnv();
 
-// import {
-
-// } from "@/routers";
-
 const app = express();
 app
   .use(cors())

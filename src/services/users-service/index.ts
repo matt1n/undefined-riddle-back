@@ -4,7 +4,7 @@ import { users } from "@prisma/client";
 import jwt from "jsonwebtoken"
 import sessionRepository from "@/repositories/sessions-repository";
 
-export async function createUser({email, password}: usersParams): Promise<users> {
+export async function signUp({email, password}: usersParams): Promise<users> {
     const unvalidEmail = await userRepository.findUser(email)
 
     console.log(unvalidEmail)
@@ -35,7 +35,6 @@ export async function signIn(body: {email: string, password: string}){
     throw 401
   }
 
-  //session
   delete user.password
 
   const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET);
@@ -51,7 +50,7 @@ export async function signIn(body: {email: string, password: string}){
 export type usersParams = Pick<users, "email" | "password">;
 
 const usersService = {
-    createUser,
+  signUp,
     signIn
 }
 

@@ -18,8 +18,7 @@ export async function answerCheck(phaseNumber: number, answer: string, userId: n
   }
 
   if (user.phase===phaseNumber){
-    const nextPhase = await userRepository.phasePass(userId, phaseNumber)
-    console.log(nextPhase)
+    await userRepository.phasePass(userId, phaseNumber)
   }
 
   return true
