@@ -1,6 +1,6 @@
 # undefined-riddle-back
 
-Este é o back-end do [Undefined Riddle](https://github.com/matt1n/Undefined-Riddle-Front)!
+Este é o back-end do [Undefined Riddle](https://github.com/matt1n/Undefined-Riddle-Front/tree/main/front-end)!
 
 ## Features
 
