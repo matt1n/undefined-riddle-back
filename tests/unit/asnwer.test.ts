@@ -1,6 +1,6 @@
-import answerRepository from "@/repositories/awnsers-repository"
-import userRepository from "@/repositories/users-repository"
-import answerService from "@/services/answers-service"
+import answerRepository from "../repositories/awnsers-repository"
+import userRepository from "../repositories/users-repository"
+import answerService from "../services/answers-service"
 
 describe("answers unit test suite", ()=> {
     describe("answerCheck", () => {

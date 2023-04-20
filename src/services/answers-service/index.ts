@@ -1,5 +1,5 @@
-import answerRepository from "@/repositories/awnsers-repository";
-import userRepository from "@/repositories/users-repository";
+import answerRepository from "../../repositories/awnsers-repository";
+import userRepository from "../../repositories/users-repository";
 
 export async function answerCheck(phaseNumber: number, answer: string, userId: number) {
   const user = await userRepository.findUserById(userId)

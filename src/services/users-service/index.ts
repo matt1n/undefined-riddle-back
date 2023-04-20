@@ -1,8 +1,8 @@
-import userRepository from "@/repositories/users-repository";
+import userRepository from "../../repositories/users-repository";
 import bcrypt from "bcrypt"
 import { users } from "@prisma/client";
 import jwt from "jsonwebtoken"
-import sessionRepository from "@/repositories/sessions-repository";
+import sessionRepository from "../../repositories/sessions-repository";
 
 export async function signUp({email, password}: usersParams): Promise<users> {
     const unvalidEmail = await userRepository.findUser(email)

@@ -1,4 +1,4 @@
-import { prisma } from "@/config";
+import { prisma } from "../../config";
 import { Prisma } from "@prisma/client";
 
 async function answerCheck(answer: string, id: number){

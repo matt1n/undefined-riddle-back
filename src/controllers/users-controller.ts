@@ -1,4 +1,4 @@
-import usersService from "@/services/users-service";
+import usersService from "../services/users-service";
 import { Request, Response } from "express";
 
 export async function usersPost(req: Request, res: Response) {
@@ -17,6 +17,6 @@ export async function signInPost(req: Request, res: Response) {
     const user = await usersService.signIn({email, password});
     return res.status(200).send(user);
   } catch (error) {
-    return res.sendStatus(error)
+    return res.sendStatus(401)
   }
 }

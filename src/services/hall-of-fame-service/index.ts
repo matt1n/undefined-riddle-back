@@ -1,5 +1,5 @@
-import hallRespository from "@/repositories/hall-of-fame-repository";
-import userRepository from "@/repositories/users-repository";
+import hallRespository from "../../repositories/hall-of-fame-repository";
+import userRepository from "../../repositories/users-repository";
 
 export async function nameCreate(name: string, userId:number) {
     const nameByUser = await hallRespository.findNameById(userId)

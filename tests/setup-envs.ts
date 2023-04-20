@@ -1,4 +1,4 @@
 
-import { loadEnv } from "@/config";
+import { loadEnv } from "../src/config";
 
 loadEnv();

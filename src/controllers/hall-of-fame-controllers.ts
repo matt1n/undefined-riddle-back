@@ -1,5 +1,5 @@
-import { AuthenticatedRequest } from "@/middlewares/authentication-middleware";
-import hallService from "@/services/hall-of-fame-service";
+import { AuthenticatedRequest } from "../middlewares/authentication-middleware";
+import hallService from "../services/hall-of-fame-service";
 import { Response } from "express";
 
 export async function postName(req: AuthenticatedRequest, res: Response) {

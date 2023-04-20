@@ -1,7 +1,7 @@
 import express, {Express} from "express";
 import cors from "cors";
 
-import { loadEnv, connectDb, disconnectDB } from "@/config";
+import { loadEnv, connectDb, disconnectDB } from "./config";
 import { answersRouter, phaseRouter, usersRouter } from "./routers";
 import { hallRouter } from "./routers/hall-of-fame-router";
 

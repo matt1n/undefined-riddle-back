@@ -2,12 +2,13 @@ services:
   postgres:
     image: postgres
     container_name: postgres
+    restart: always
     networks:
       - fullstack-network
     ports:
       - 5433:5432
     env_file:
-      - undefined-riddle-back/.env
+      - .env
     volumes:
       - postgres-volume:/var/lib/postgresql/data
 
@@ -17,7 +18,7 @@ services:
     networks:
       - fullstack-network
     ports:
-      - 5000:5000
+      - 1234:5000
     depends_on:
       - postgres
     env_file:

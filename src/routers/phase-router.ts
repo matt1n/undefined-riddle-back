@@ -1,5 +1,5 @@
-import { endPhaseAuthorization, phaseAuthorization } from "@/controllers/phases-controllers";
-import { authenticateToken } from "@/middlewares/authentication-middleware";
+import { endPhaseAuthorization, phaseAuthorization } from "../controllers/phases-controllers";
+import { authenticateToken } from "../middlewares/authentication-middleware";
 import { Router } from "express";
 
 const phaseRouter = Router()

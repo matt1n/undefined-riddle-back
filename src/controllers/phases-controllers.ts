@@ -1,5 +1,5 @@
-import { AuthenticatedRequest } from "@/middlewares/authentication-middleware";
-import phasesService from "@/services/phases-service";
+import { AuthenticatedRequest } from "../middlewares/authentication-middleware";
+import phasesService from "../services/phases-service";
 import { Response } from "express";
 
 export async function phaseAuthorization(req: AuthenticatedRequest,res: Response){

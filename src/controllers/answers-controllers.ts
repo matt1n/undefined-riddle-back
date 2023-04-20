@@ -1,5 +1,5 @@
-import { AuthenticatedRequest } from "@/middlewares/authentication-middleware";
-import answerService from "@/services/answers-service";
+import { AuthenticatedRequest } from "../middlewares/authentication-middleware";
+import answerService from "../services/answers-service";
 import {Response } from "express";
 
 export async function answerPost(req: AuthenticatedRequest,res: Response){

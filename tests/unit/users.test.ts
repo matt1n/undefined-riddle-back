@@ -1,6 +1,6 @@
-import sessionRepository from "@/repositories/sessions-repository"
-import userRepository from "@/repositories/users-repository"
-import usersService from "@/services/users-service"
+import sessionRepository from "../repositories/sessions-repository"
+import userRepository from "../repositories/users-repository"
+import usersService from "../services/users-service"
 
 
 jest.mock("bcrypt", ()=> ({
