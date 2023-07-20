@@ -13,7 +13,6 @@
     "dev:load-envs": "dotenv -e .env",
     "dev:migration:run": "npm run dev:load-envs prisma migrate deploy",
     "dev:migration:generate": "npm run dev:load-envs prisma migrate dev"
-
   },
   "repository": {
     "type": "git",
@@ -40,6 +39,7 @@
     "joi": "^17.9.1",
     "jsonwebtoken": "^9.0.0",
     "pg": "^8.10.0",
+    "redis": "^4.6.7",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

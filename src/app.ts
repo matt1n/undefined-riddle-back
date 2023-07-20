@@ -1,7 +1,7 @@
 import express, {Express} from "express";
 import cors from "cors";
 
-import { loadEnv, connectDb, disconnectDB } from "./config";
+import { loadEnv, connectDb, disconnectDB, connectRedis } from "./config";
 import { answersRouter, phaseRouter, usersRouter } from "./routers";
 import { hallRouter } from "./routers/hall-of-fame-router";
 
@@ -19,6 +19,7 @@ app
 
 export function init(): Promise<Express> {
 connectDb();
+connectRedis();
 return Promise.resolve(app);
 }
 
